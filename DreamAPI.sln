@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamAPI.WebAPI", "DreamAPI.WebAPI\DreamAPI.WebAPI.csproj", "{10C73EBD-8C8C-4924-B3CE-266DE65BF3D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamAPI.Data", "DreamAPI.Data\DreamAPI.Data.csproj", "{8758196B-0FFA-4030-9141-57D9D520F46E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamAPI.Models", "DreamAPI.Models\DreamAPI.Models.csproj", "{BF7ECBFF-B676-40C9-B02C-5CD98572D880}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamAPI.Services", "DreamAPI.Services\DreamAPI.Services.csproj", "{8F69A03E-DDDA-48B8-AFC0-E573DAF16861}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{10C73EBD-8C8C-4924-B3CE-266DE65BF3D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10C73EBD-8C8C-4924-B3CE-266DE65BF3D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10C73EBD-8C8C-4924-B3CE-266DE65BF3D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8758196B-0FFA-4030-9141-57D9D520F46E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8758196B-0FFA-4030-9141-57D9D520F46E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8758196B-0FFA-4030-9141-57D9D520F46E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8758196B-0FFA-4030-9141-57D9D520F46E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF7ECBFF-B676-40C9-B02C-5CD98572D880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF7ECBFF-B676-40C9-B02C-5CD98572D880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF7ECBFF-B676-40C9-B02C-5CD98572D880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF7ECBFF-B676-40C9-B02C-5CD98572D880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F69A03E-DDDA-48B8-AFC0-E573DAF16861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F69A03E-DDDA-48B8-AFC0-E573DAF16861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F69A03E-DDDA-48B8-AFC0-E573DAF16861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F69A03E-DDDA-48B8-AFC0-E573DAF16861}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
