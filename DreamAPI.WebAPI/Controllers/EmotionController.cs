@@ -11,11 +11,11 @@ using Microsoft.AspNet.Identity;
 namespace DreamAPI.WebAPI.Controllers
 {
     [Authorize]
-    public class NoteController : ApiController
+    public class EmotionController : ApiController
     {
         public IHttpActionResult Get()
         {
-            EmotionService emotionService = CreateNoteService();
+            EmotionService emotionService = CreateEmotionService();
             var emotions = emotionService.GetEmotions();
             return Ok(emotions);
         }
@@ -24,14 +24,14 @@ namespace DreamAPI.WebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateNoteService();
+            var service = CreateEmotionService();
 
             if (!service.CreateEmotion(emotion))
                 return InternalServerError();
 
             return Ok();
         }
-        private EmotionService CreateNoteService()
+        private EmotionService CreateEmotionService()
         {
             var emotionId = Guid.Parse(User.Identity.GetUserId());
             var noteService = new EmotionService(emotionId);

@@ -10,11 +10,11 @@ namespace DreamAPI.Services
 {
     public class EmotionService
     {
-        private readonly Guid _emotionId;
+        private readonly Guid _userId;
 
-        public EmotionService(Guid emotionId)
+        public EmotionService(Guid userId)
         {
-            _emotionId = emotionId;
+            _userId = userId;
         }
 
         public bool CreateEmotion(EmotionCreate model)
@@ -22,7 +22,7 @@ namespace DreamAPI.Services
             var entity =
                 new Emotion()
                 {
-                    DreamId = _emotionId,
+                    OwnerId = _userId,
                     EmotionType = model.EmotionType,
                 };
 
@@ -40,7 +40,7 @@ namespace DreamAPI.Services
                 var query =
                     ctx
                         .Emotions
-                        .Where(e => e.DreamId == _emotionId)
+                        .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
                                 new EmotionList()

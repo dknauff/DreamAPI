@@ -11,9 +11,7 @@ namespace DreamAPI.Data
     {
         [Key]
         public int EmotionId { get; set; }
-        [Required]
         public string EmotionType { get; set; }
-        [Required]
-        public Guid DreamId { get; set; }
+        public Guid OwnerId { get; set; }
     }
 }
