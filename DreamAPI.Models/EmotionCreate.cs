@@ -5,15 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DreamAPI.Data
+namespace DreamAPI.Models
 {
-    public class Emotion
+    public class EmotionCreate
     {
-        [Key]
-        public int EmotionId { get; set; }
         [Required]
         public string EmotionType { get; set; }
-        [Required]
-        public Guid DreamId { get; set; }
     }
 }
