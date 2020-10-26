@@ -10,7 +10,8 @@ namespace DreamAPI.Data
     public class Character
     {
         [Key]
-        public int CharacterId { get; set; }
+        public int CharacterId { get; set; }        
+        public Guid OwnerId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
