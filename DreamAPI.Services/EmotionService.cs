@@ -48,7 +48,7 @@ namespace DreamAPI.Services
             }
         }
 
-        public bool DeleteNote(int noteId)
+        public bool DeleteEmotion(int noteId)
         {
             using (var ctx = new ApplicationDbContext())
             {
