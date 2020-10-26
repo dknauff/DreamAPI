@@ -8,6 +8,7 @@ namespace DreamAPI.Models
 {
     public class EmotionEdit
     {
-
+        public int EmotionId { get; set; }
+        public string EmotionType { get; set; }
     }
 }
