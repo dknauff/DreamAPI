@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using DreamAPI.WebAPI.Models;
 using DreamAPI.WebAPI.Providers;
 using DreamAPI.WebAPI.Results;
+using DreamAPI.Data;
 
 namespace DreamAPI.WebAPI.Controllers
 {
