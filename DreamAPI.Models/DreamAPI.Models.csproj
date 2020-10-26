@@ -48,6 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentCreate.cs" />
+    <Compile Include="CommentDelete.cs" />
+    <Compile Include="CommentListItem.cs" />
+    <Compile Include="CommentUpdate.cs" />
     <Compile Include="DreamListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
