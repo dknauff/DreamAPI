@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Comment.cs" />
     <Compile Include="Dream.cs" />
+    <Compile Include="Emotion.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
