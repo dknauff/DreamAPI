@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using DreamAPI.Models;
 using DreamAPI.Services;
 using Microsoft.AspNet.Identity;
 
@@ -25,5 +26,19 @@ namespace DreamAPI.WebAPI.Controllers
             var emotions = emotionService.GetEmotions();
             return Ok(emotions);
         }
+        public IHttpActionResult Post(EmotionCreate emotion)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateNoteService();
+
+            if (!service.CreateEmotion(emotion))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+
     }
 }
