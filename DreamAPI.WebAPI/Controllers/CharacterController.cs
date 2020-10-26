@@ -1,4 +1,5 @@
-﻿using DreamAPI.Models.Character;
+﻿using DreamAPI.Models;
+using DreamAPI.Models.Character;
 using DreamAPI.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -26,6 +27,27 @@ namespace DreamAPI.WebAPI.Controllers
             var service = CreateCharacterService();
             if (!service.CreateCharacter(character))
                 return InternalServerError();
+            return Ok();
+        }
+        public IHttpActionResult Put(CharacterEdit character)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateCharacterService();
+
+            if (!service.UpdateCharacter(character))
+                return InternalServerError();
+
+            return Ok();
+        }
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateCharacterService();
+
+            if (!service.DeleteCharacter(id))
+                return InternalServerError();
+
             return Ok();
         }
         private CharacterService CreateCharacterService()

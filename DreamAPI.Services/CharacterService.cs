@@ -1,4 +1,5 @@
 ﻿using DreamAPI.Data;
+using DreamAPI.Models;
 using DreamAPI.Models.Character;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,8 @@ namespace DreamAPI.Services
         {
             var entity =
                 new Character()
-                { 
+                {
+                    OwnerId = _userId,
                     Name = model.Name,
                     Description = model.Description,
                     Relationship = model.Relationship
@@ -34,7 +36,36 @@ namespace DreamAPI.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        public bool UpdateCharacter(CharacterEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Characters
+                        .Single(e => e.CharacterId == model.CharacterId && e.OwnerId == _userId);
 
+                entity.Name = model.Name;
+                entity.Description = model.Description;
+                entity.Relationship = model.Relationship;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteCharacter(int noteId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Characters
+                        .Single(e => e.CharacterId == noteId && e.OwnerId == _userId);
+
+                ctx.Characters.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
         public IEnumerable<CharacterListItem> GetCharacters()
         {
             using (var ctx = new ApplicationDbContext())
@@ -47,6 +78,7 @@ namespace DreamAPI.Services
                             e =>
                                 new CharacterListItem
                                 {
+                                    CharacterId = e.CharacterId,
                                     Name = e.Name,
                                     Description = e.Description,
                                     Relationship = e.Relationship

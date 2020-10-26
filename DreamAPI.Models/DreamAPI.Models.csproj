@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterEdit.cs" />
     <Compile Include="Character\CharacterCreate.cs" />
     <Compile Include="Character\CharacterListItem.cs" />
     <Compile Include="DreamListItem.cs" />
