@@ -32,5 +32,26 @@ namespace DreamAPI.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public IEnumerable<EmotionList> GetEmotions()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Emotions
+                        .Where(e => e.DreamId == _emotionId)
+                        .Select(
+                            e =>
+                                new EmotionList()
+                                {
+                                    EmotionId = e.EmotionId,
+                                    EmotionType = e.EmotionType,
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
     }
 }
