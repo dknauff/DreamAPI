@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="DreamListItem.cs" />
     <Compile Include="EmotionCreate.cs" />
+    <Compile Include="EmotionDetail.cs" />
     <Compile Include="EmotionList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
