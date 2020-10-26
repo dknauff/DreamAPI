@@ -48,6 +48,21 @@ namespace DreamAPI.Services
             }
         }
 
+        public bool DeleteNote(int noteId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Emotions
+                        .Single(e => e.EmotionId == noteId && e.OwnerId == _userId);
+
+                ctx.Emotions.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
         public IEnumerable<EmotionList> GetEmotions()
         {
             using (var ctx = new ApplicationDbContext())

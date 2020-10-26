@@ -39,6 +39,16 @@ namespace DreamAPI.WebAPI.Controllers
             return Ok();
         }
 
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateEmotionService();
+
+            if (!service.DeleteEmotion(id))
+                return InternalServerError();
+
+            return Ok();
+        }
+
         public IHttpActionResult Post(EmotionCreate emotion)
         {
             if (!ModelState.IsValid)
