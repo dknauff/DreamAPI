@@ -25,6 +25,20 @@ namespace DreamAPI.WebAPI.Controllers
             var emotion = emotionService.GetEmotions();
             return Ok(emotion);
         }
+
+        public IHttpActionResult Put(EmotionEdit emotion)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateEmotionService();
+
+            if (!service.UpdateEmotion(emotion))
+                return InternalServerError();
+
+            return Ok();
+        }
+
         public IHttpActionResult Post(EmotionCreate emotion)
         {
             if (!ModelState.IsValid)
