@@ -48,7 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DreamListItem.cs" />
+    <Compile Include="Dream\DreamCreate.cs" />
+    <Compile Include="Dream\DreamDetail.cs" />
+    <Compile Include="Dream\DreamEdit.cs" />
+    <Compile Include="Dream\DreamListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
