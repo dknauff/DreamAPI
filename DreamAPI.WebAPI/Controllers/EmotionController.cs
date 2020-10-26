@@ -13,13 +13,6 @@ namespace DreamAPI.WebAPI.Controllers
     [Authorize]
     public class NoteController : ApiController
     {
-        private EmotionService CreateNoteService()
-        {
-            var emotionId = Guid.Parse(User.Identity.GetUserId());
-            var noteService = new EmotionService(emotionId);
-            return noteService;
-        }
-
         public IHttpActionResult Get()
         {
             EmotionService emotionService = CreateNoteService();
@@ -38,7 +31,11 @@ namespace DreamAPI.WebAPI.Controllers
 
             return Ok();
         }
-
-
+        private EmotionService CreateNoteService()
+        {
+            var emotionId = Guid.Parse(User.Identity.GetUserId());
+            var noteService = new EmotionService(emotionId);
+            return noteService;
+        }
     }
 }
