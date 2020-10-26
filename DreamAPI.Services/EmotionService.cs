@@ -53,5 +53,22 @@ namespace DreamAPI.Services
                 return query.ToArray();
             }
         }
+
+        public EmotionDetail GetEmotionById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Emotions
+                        .Single(e => e.EmotionId == id && e.OwnerId == _userId);
+                return
+                    new EmotionDetail()
+                    {
+                        EmotionId = entity.EmotionId,
+                        EmotionType = entity.EmotionType,
+                    };
+            }
+        }
     }
 }
