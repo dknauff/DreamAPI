@@ -9,6 +9,6 @@ namespace DreamAPI.Models
     public class CommentDelete
     {
         public int CommentId { get; set; }
-        public string CommentDescription { get; set; }
+        public Guid OwnerId { get; set; }
     }
 }
