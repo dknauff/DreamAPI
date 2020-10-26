@@ -18,5 +18,12 @@ namespace DreamAPI.WebAPI.Controllers
             var noteService = new EmotionService(emotionId);
             return noteService;
         }
+
+        public IHttpActionResult Get()
+        {
+            EmotionService emotionService = CreateNoteService();
+            var emotions = emotionService.GetEmotions();
+            return Ok(emotions);
+        }
     }
 }
