@@ -33,6 +33,21 @@ namespace DreamAPI.Services
             }
         }
 
+        public bool UpdateEmotion(EmotionEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Emotions
+                        .Single(e => e.EmotionId == model.EmotionId && e.OwnerId == _userId);
+
+                entity.EmotionType = model.EmotionType;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
         public IEnumerable<EmotionList> GetEmotions()
         {
             using (var ctx = new ApplicationDbContext())
