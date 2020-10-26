@@ -56,5 +56,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DreamAPI.Data\DreamAPI.Data.csproj">
+      <Project>{8758196b-0ffa-4030-9141-57d9d520f46e}</Project>
+      <Name>DreamAPI.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DreamAPI.Models\DreamAPI.Models.csproj">
+      <Project>{bf7ecbff-b676-40c9-b02c-5cd98572d880}</Project>
+      <Name>DreamAPI.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
