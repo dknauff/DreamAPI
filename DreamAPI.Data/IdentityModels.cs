@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -32,9 +33,10 @@ namespace DreamAPI.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Dream> Dreams { get; set; } //<--- Add this
+        public DbSet<Dream> Dreams { get; set; }
         public DbSet<Comment> Comments{ get; set; }
         public DbSet<Character> Characters { get; set; }
+        public DbSet<Emotion> Emotions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

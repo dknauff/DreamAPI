@@ -60,6 +60,10 @@
   </ItemGroup>
   <ItemGroup>
 
+    <Compile Include="Dream\DreamCreate.cs" />
+    <Compile Include="Dream\DreamDetail.cs" />
+    <Compile Include="Dream\DreamEdit.cs" />
+    <Compile Include="Dream\DreamListItem.cs" />
     <Compile Include="CommentCreate.cs" />
     <Compile Include="CommentDelete.cs" />
     <Compile Include="CommentDetail.cs" />
