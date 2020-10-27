@@ -19,6 +19,12 @@ namespace DreamAPI.WebAPI.Controllers
             var comments = commentService.GetComments();
             return Ok(comments);
         }
+        public IHttpActionResult Get(int id)
+        {
+            CommentService commentService = CreateCommentService();
+            var comment = commentService.GetCommentById(id);
+            return Ok(comment);
+        }
         public IHttpActionResult Post(CommentCreate comment)
         {
             if (!ModelState.IsValid)

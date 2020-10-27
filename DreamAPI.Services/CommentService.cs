@@ -43,6 +43,7 @@ namespace DreamAPI.Services
                             e =>
                                 new CommentListItem
                                 {
+
                                    CommentId = e.CommentId,
                                    CommentDescription = e.CommentDescription
                                 }
@@ -81,14 +82,14 @@ namespace DreamAPI.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeleteComment(int commentId)
+        public bool DeleteComment(int CommentId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Comments
-                        .Single(e => e.CommentId == commentId && e.OwnerId == _userId);
+                        .Single(e => e.CommentId == CommentId && e.OwnerId == _userId);
 
                 ctx.Comments.Remove(entity);
                 return ctx.SaveChanges() == 1;
