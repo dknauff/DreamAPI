@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace DreamAPI.Data
 {
-    public class Dream
+    public class Character
     {
         [Key]
-        public int DreamId { get; set; }
+        public int CharacterId { get; set; }        
         public Guid OwnerId { get; set; }
         [Required]
-        public string Title { get; set; }
+        public string Name { get; set; }
         [Required]
         public string Description { get; set; }
-        public string Location { get; set; }
-        public string Takeaway { get; set; }
-        public int Rating { get; set; }
+        [Required]
+        public string Relationship { get; set; }
     }
 }
