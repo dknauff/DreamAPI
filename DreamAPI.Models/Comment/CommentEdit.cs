@@ -10,6 +10,5 @@ namespace DreamAPI.Models
     {
         public int CommentId { get; set; }
         public string CommentDescription { get; set; }
-        public Guid OwnerId { get; set; }
     }
 }

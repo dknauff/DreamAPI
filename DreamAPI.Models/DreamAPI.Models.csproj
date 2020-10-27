@@ -59,12 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Character\CharacterDetail.cs" />
     <Compile Include="Dream\DreamCreate.cs" />
     <Compile Include="Dream\DreamDetail.cs" />
     <Compile Include="Dream\DreamEdit.cs" />
     <Compile Include="Dream\DreamListItem.cs" />
     <Compile Include="Comment\CommentCreate.cs" />
-    <Compile Include="Comment\CommentDelete.cs" />
     <Compile Include="Comment\CommentDetail.cs" />
     <Compile Include="Comment\CommentListItem.cs" />
     <Compile Include="Comment\CommentEdit.cs" />
