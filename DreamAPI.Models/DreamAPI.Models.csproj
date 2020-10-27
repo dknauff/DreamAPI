@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
+    <Compile Include="CommentCreate.cs" />
+    <Compile Include="CommentDelete.cs" />
+    <Compile Include="CommentDetail.cs" />
+    <Compile Include="CommentListItem.cs" />
+    <Compile Include="CommentEdit.cs" />
     <Compile Include="CharacterEdit.cs" />
     <Compile Include="Character\CharacterCreate.cs" />
     <Compile Include="Character\CharacterListItem.cs" />

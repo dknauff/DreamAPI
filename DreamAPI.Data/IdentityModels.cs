@@ -31,10 +31,10 @@ namespace DreamAPI.Data
         {
             return new ApplicationDbContext();
         }
-       // public DbSet<Dream> Dreams { get; set; } //<--- Add this
-        //public DbSet<Comment> Comments{ get; set; }
+
+        public DbSet<Dream> Dreams { get; set; } //<--- Add this
+        public DbSet<Comment> Comments{ get; set; }
         public DbSet<Character> Characters { get; set; }
-        //public DbSet<Emotion> Emotions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
