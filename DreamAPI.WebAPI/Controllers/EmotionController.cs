@@ -22,7 +22,7 @@ namespace DreamAPI.WebAPI.Controllers
         public IHttpActionResult Get(int id)
         {
             EmotionService emotionService = CreateEmotionService();
-            var emotion = emotionService.GetEmotions();
+            var emotion = emotionService.GetEmotionById(id);
             return Ok(emotion);
         }
 
