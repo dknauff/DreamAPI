@@ -71,6 +71,10 @@
     <Compile Include="Character\CharacterEdit.cs" />
     <Compile Include="Character\CharacterCreate.cs" />
     <Compile Include="Character\CharacterListItem.cs" />
+    <Compile Include="Emotion\EmotionDetail.cs" />
+    <Compile Include="Emotion\EmotionEdit.cs" />
+    <Compile Include="Emotion\EmotionCreate.cs" />
+    <Compile Include="Emotion\EmotionListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

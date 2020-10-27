@@ -36,7 +36,7 @@ namespace DreamAPI.Data
         public DbSet<Dream> Dreams { get; set; }
         public DbSet<Comment> Comments{ get; set; }
         public DbSet<Character> Characters { get; set; }
-        //public DbSet<Emotion> Emotions { get; set; }
+        public DbSet<Emotion> Emotions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
