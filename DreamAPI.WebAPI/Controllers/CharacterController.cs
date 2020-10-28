@@ -29,6 +29,12 @@ namespace DreamAPI.WebAPI.Controllers
                 return InternalServerError();
             return Ok();
         }
+        public IHttpActionResult Get(int id)
+        {
+            CharacterService characterService = CreateCharacterService();
+            var character = characterService.GetCharacterById(id);
+            return Ok(character);
+        }
         public IHttpActionResult Put(CharacterEdit character)
         {
             if (!ModelState.IsValid)

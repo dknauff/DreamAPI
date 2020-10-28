@@ -88,5 +88,23 @@ namespace DreamAPI.Services
                 return query.ToArray();
             }
         }
+        public CharacterDetail GetCharacterById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Characters
+                        .Single(e => e.CharacterId == id && e.OwnerId == _userId);
+                return
+                    new CharacterDetail
+                    {
+                        CharacterId = entity.CharacterId,
+                        Name = entity.Name,
+                        Description = entity.Description,
+                        Relationship = entity.Relationship
+                    };
+            }
+        }
     }
 }

@@ -59,12 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Character\CharacterDetail.cs" />
     <Compile Include="Dream\DreamCreate.cs" />
     <Compile Include="Dream\DreamDetail.cs" />
     <Compile Include="Dream\DreamEdit.cs" />
     <Compile Include="Dream\DreamListItem.cs" />
     <Compile Include="Comment\CommentCreate.cs" />
-    <Compile Include="Comment\CommentDelete.cs" />
     <Compile Include="Comment\CommentDetail.cs" />
     <Compile Include="Comment\CommentListItem.cs" />
     <Compile Include="Comment\CommentEdit.cs" />
@@ -80,6 +80,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DreamAPI.Data\DreamAPI.Data.csproj">
+      <Project>{8758196B-0FFA-4030-9141-57D9D520F46E}</Project>
+      <Name>DreamAPI.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
