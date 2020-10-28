@@ -23,7 +23,8 @@ namespace DreamAPI.Services
                 new Comment()
                 {
                     OwnerId = _userId,
-                    CommentDescription = model.CommentDescription
+                    CommentDescription = model.CommentDescription,
+                    DreamId = model.DreamId
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -43,11 +44,11 @@ namespace DreamAPI.Services
                             e =>
                                 new CommentListItem
                                 {
-
                                    CommentId = e.CommentId,
-                                   CommentDescription = e.CommentDescription
+                                   CommentDescription = e.CommentDescription,
+                                   DreamId = e.DreamId
                                 }
-                                );
+                              );
 
                 return query.ToArray();
             }
@@ -64,7 +65,8 @@ namespace DreamAPI.Services
                     new CommentDetail
                     {
                         CommentId = entity.CommentId,
-                        CommentDescription = entity.CommentDescription
+                        CommentDescription = entity.CommentDescription,
+                        DreamId = entity.DreamId
                     };
             }
         }

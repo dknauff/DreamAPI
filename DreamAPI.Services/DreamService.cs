@@ -55,7 +55,8 @@ namespace DreamAPI.Services
                                     Description = e.Description,
                                     Location = e.Location,
                                     Takeaway = e.Takeaway,
-                                    Rating = e.Rating
+                                    Rating = e.Rating,
+                                    Comments = e.Comments
                                 }
                          );
 
@@ -79,7 +80,8 @@ namespace DreamAPI.Services
                         Description = entity.Description,
                         Location = entity.Location,
                         Takeaway = entity.Takeaway,
-                        Rating = entity.Rating
+                        Rating = entity.Rating,
+                        Comments = entity.Comments
                     };
             }
         }

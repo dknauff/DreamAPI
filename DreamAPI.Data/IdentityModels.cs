@@ -48,6 +48,11 @@ namespace DreamAPI.Data
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
+
+            modelBuilder.Entity<Comment>()
+                .HasRequired<Dream>(c => c.Dream)
+                .WithMany(d => d.Comments)
+                .HasForeignKey<int>(c => c.DreamId);
         }
     }
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
