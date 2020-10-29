@@ -153,37 +153,15 @@
     <Compile Include="Character.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="Dream.cs" />
+    <Compile Include="Dream_Character.cs" />
     <Compile Include="Emotion.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202010261602514_first.cs" />
-    <Compile Include="Migrations\202010261602514_first.Designer.cs">
-      <DependentUpon>202010261602514_first.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010261608524_Takeaway.cs" />
-    <Compile Include="Migrations\202010261608524_Takeaway.Designer.cs">
-      <DependentUpon>202010261608524_Takeaway.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010271513013_DCCE.cs" />
-    <Compile Include="Migrations\202010271513013_DCCE.Designer.cs">
-      <DependentUpon>202010271513013_DCCE.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202010261602514_first.resx">
-      <DependentUpon>202010261602514_first.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010261608524_Takeaway.resx">
-      <DependentUpon>202010261608524_Takeaway.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010271513013_DCCE.resx">
-      <DependentUpon>202010271513013_DCCE.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

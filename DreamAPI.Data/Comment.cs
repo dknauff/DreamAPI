@@ -15,5 +15,8 @@ namespace DreamAPI.Data
         public Guid OwnerId { get; set; }
         [Required]
         public string CommentDescription { get; set; }
+        public int DreamId { get; set; }
+        [ForeignKey(nameof(DreamId))]
+        public virtual Dream Dream{ get; set; }
     }
 }

@@ -9,6 +9,10 @@ namespace DreamAPI.Data
 {
     public class Dream
     {
+        public Dream()
+        {
+            this.Characters = new HashSet<Character>();
+        }
         [Key]
         public int DreamId { get; set; }
         public Guid OwnerId { get; set; }
@@ -19,5 +23,8 @@ namespace DreamAPI.Data
         public string Location { get; set; }
         public string Takeaway { get; set; }
         public int Rating { get; set; }
+        public Character Character { get; set; }
+        public virtual ICollection<Character> Characters{ get; set; }
+        
     }
 }

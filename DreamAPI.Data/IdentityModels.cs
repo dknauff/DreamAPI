@@ -37,6 +37,7 @@ namespace DreamAPI.Data
         public DbSet<Comment> Comments{ get; set; }
         public DbSet<Character> Characters { get; set; }
         public DbSet<Emotion> Emotions { get; set; }
+        public virtual DbSet<View_DreamEmotion> View_DreamEmotion{ get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -48,6 +49,17 @@ namespace DreamAPI.Data
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
+
+            modelBuilder.Entity<Dream>()
+                .HasMany<Character>(s => s.Characters)
+                .WithMany(c => c.Dreams)
+                .Map(cs =>
+                {
+                    cs.MapLeftKey("DreamId");
+                    cs.MapRightKey("CharacterId");
+                    cs.ToTable("DreamEmotion");
+                });
+
         }
     }
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
