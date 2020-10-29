@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DreamAPI.Models.Dream
+namespace DreamAPI.Models.Dream1
 {
     public class DreamDetail
     {
@@ -18,5 +18,7 @@ namespace DreamAPI.Models.Dream
         public int Rating { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
+
+        public int? EmotionId { get; set; }
     }
 }

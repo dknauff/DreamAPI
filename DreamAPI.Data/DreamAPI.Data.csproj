@@ -155,29 +155,9 @@
     <Compile Include="Dream.cs" />
     <Compile Include="Emotion.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202010261602514_first.cs" />
-    <Compile Include="Migrations\202010261602514_first.Designer.cs">
-      <DependentUpon>202010261602514_first.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010261608524_Takeaway.cs" />
-    <Compile Include="Migrations\202010261608524_Takeaway.Designer.cs">
-      <DependentUpon>202010261608524_Takeaway.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010271513013_DCCE.cs" />
-    <Compile Include="Migrations\202010271513013_DCCE.Designer.cs">
-      <DependentUpon>202010271513013_DCCE.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010281411586_onetomany.cs" />
-    <Compile Include="Migrations\202010281411586_onetomany.Designer.cs">
-      <DependentUpon>202010281411586_onetomany.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010281443265_restore.cs" />
-    <Compile Include="Migrations\202010281443265_restore.Designer.cs">
-      <DependentUpon>202010281443265_restore.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010281454467_TMB.cs" />
-    <Compile Include="Migrations\202010281454467_TMB.Designer.cs">
-      <DependentUpon>202010281454467_TMB.cs</DependentUpon>
+    <Compile Include="Migrations\202010291902182_nullable.cs" />
+    <Compile Include="Migrations\202010291902182_nullable.Designer.cs">
+      <DependentUpon>202010291902182_nullable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -187,23 +167,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202010261602514_first.resx">
-      <DependentUpon>202010261602514_first.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010261608524_Takeaway.resx">
-      <DependentUpon>202010261608524_Takeaway.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010271513013_DCCE.resx">
-      <DependentUpon>202010271513013_DCCE.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010281411586_onetomany.resx">
-      <DependentUpon>202010281411586_onetomany.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010281443265_restore.resx">
-      <DependentUpon>202010281443265_restore.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010281454467_TMB.resx">
-      <DependentUpon>202010281454467_TMB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010291902182_nullable.resx">
+      <DependentUpon>202010291902182_nullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

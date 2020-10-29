@@ -1,6 +1,6 @@
 ﻿using DreamAPI.Data;
 using DreamAPI.Models;
-using DreamAPI.Models.Dream;
+using DreamAPI.Models.Dream1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +28,8 @@ namespace DreamAPI.Services
                     Description = model.Description,
                     Location = model.Location,
                     Takeaway = model.Takeaway,
-                    Rating = model.Rating
+                    Rating = model.Rating,
+                    EmotionId = model.EmotionId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -56,7 +57,8 @@ namespace DreamAPI.Services
                                     Location = e.Location,
                                     Takeaway = e.Takeaway,
                                     Rating = e.Rating,
-                                    Comments = e.Comments
+                                    Comments = e.Comments,
+                                    EmotionId = e.EmotionId
                                 }
                          );
 
@@ -81,7 +83,8 @@ namespace DreamAPI.Services
                         Location = entity.Location,
                         Takeaway = entity.Takeaway,
                         Rating = entity.Rating,
-                        Comments = entity.Comments
+                        Comments = entity.Comments,
+                        EmotionId = entity.EmotionId
                     };
             }
         }
@@ -100,6 +103,7 @@ namespace DreamAPI.Services
                 entity.Location = model.Location;
                 entity.Takeaway = model.Takeaway;
                 entity.Rating = model.Rating;
+                entity.EmotionId = model.EmotionId;
 
                 return ctx.SaveChanges() == 1;
             }

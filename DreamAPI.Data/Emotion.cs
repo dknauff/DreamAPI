@@ -13,5 +13,7 @@ namespace DreamAPI.Data
         public int EmotionId { get; set; }
         public string EmotionType { get; set; }
         public Guid OwnerId { get; set; }
+
+        public ICollection<Dream> Dreams { get; set; }
     }
 }
