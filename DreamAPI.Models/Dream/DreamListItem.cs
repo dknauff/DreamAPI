@@ -18,5 +18,7 @@ namespace DreamAPI.Models
         public int Rating { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
+
+        public int? EmotionId { get; set; }
     }
 }

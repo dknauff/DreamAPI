@@ -7,13 +7,13 @@ namespace DreamAPI.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class restore : IMigrationMetadata
+    public sealed partial class nullable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(restore));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(nullable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202010281443265_restore"; }
+            get { return "202010291902182_nullable"; }
         }
         
         string IMigrationMetadata.Source

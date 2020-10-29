@@ -1,5 +1,5 @@
 ﻿using DreamAPI.Data;
-using DreamAPI.Models.Emotion;
+using DreamAPI.Models.Emotion1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace DreamAPI.Services
                 new Emotion()
                 {
                     OwnerId = _userId,
-                    EmotionType = model.EmotionType,
+                    EmotionType = model.EmotionType
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -77,6 +77,7 @@ namespace DreamAPI.Services
                                 {
                                     EmotionId = e.EmotionId,
                                     EmotionType = e.EmotionType,
+                                    Dreams = e.Dreams
                                 }
                         );
 
@@ -97,6 +98,7 @@ namespace DreamAPI.Services
                     {
                         EmotionId = entity.EmotionId,
                         EmotionType = entity.EmotionType,
+                        Dreams = entity.Dreams
                     };
             }
         }

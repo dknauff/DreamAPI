@@ -3,19 +3,34 @@ namespace DreamAPI.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class first : DbMigration
+    public partial class nullable : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Character",
+                c => new
+                    {
+                        CharacterId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        Name = c.String(nullable: false),
+                        Description = c.String(nullable: false),
+                        Relationship = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.CharacterId);
+            
             CreateTable(
                 "dbo.Comment",
                 c => new
                     {
                         CommentId = c.Int(nullable: false, identity: true),
-                        CommentDescription = c.String(),
+                        OwnerId = c.Guid(nullable: false),
+                        CommentDescription = c.String(nullable: false),
                         DreamId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.CommentId);
+                .PrimaryKey(t => t.CommentId)
+                .ForeignKey("dbo.Dream", t => t.DreamId, cascadeDelete: true)
+                .Index(t => t.DreamId);
             
             CreateTable(
                 "dbo.Dream",
@@ -28,8 +43,21 @@ namespace DreamAPI.Data.Migrations
                         Location = c.String(),
                         Takeaway = c.String(),
                         Rating = c.Int(nullable: false),
+                        EmotionId = c.Int(nullable: true),
                     })
-                .PrimaryKey(t => t.DreamId);
+                .PrimaryKey(t => t.DreamId)
+                .ForeignKey("dbo.Emotion", t => t.EmotionId, cascadeDelete: true)
+                .Index(t => t.EmotionId);
+            
+            CreateTable(
+                "dbo.Emotion",
+                c => new
+                    {
+                        EmotionId = c.Int(nullable: false, identity: true),
+                        EmotionType = c.String(),
+                        OwnerId = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => t.EmotionId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -109,17 +137,23 @@ namespace DreamAPI.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Comment", "DreamId", "dbo.Dream");
+            DropForeignKey("dbo.Dream", "EmotionId", "dbo.Emotion");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Dream", new[] { "EmotionId" });
+            DropIndex("dbo.Comment", new[] { "DreamId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Emotion");
             DropTable("dbo.Dream");
             DropTable("dbo.Comment");
+            DropTable("dbo.Character");
         }
     }
 }

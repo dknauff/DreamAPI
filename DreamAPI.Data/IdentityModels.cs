@@ -53,6 +53,21 @@ namespace DreamAPI.Data
                 .HasRequired<Dream>(c => c.Dream)
                 .WithMany(d => d.Comments)
                 .HasForeignKey<int>(c => c.DreamId);
+
+            modelBuilder.Entity<Dream>()
+                .HasRequired<Emotion>(d => d.Emotion)
+                .WithMany(e => e.Dreams)
+                .HasForeignKey<int?>(d => d.EmotionId);
+
+            //modelBuilder.Entity<Dream>()
+            //    .HasMany<Emotion>(d => d.Emotions)
+            //    .WithMany(e => e.Dreams)
+            //    .Map(cs =>
+            //    {
+            //        cs.MapLeftKey("DreamRefId");
+            //        cs.MapRightKey("EmotionRefId");
+            //        cs.ToTable("DreamEmotion");
+            //    });
         }
     }
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
