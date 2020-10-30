@@ -21,6 +21,6 @@ namespace DreamAPI.Models.Dream1
 
         public int? EmotionId { get; set; }
 
-        public virtual ICollection<Character> Characters { get; set; }
+        public virtual ICollection<CharacterDream> CharacterDreams { get; set; }
     }
 }

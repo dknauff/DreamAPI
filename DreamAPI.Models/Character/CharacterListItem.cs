@@ -13,6 +13,6 @@ namespace DreamAPI.Models.Character1
         public string Name { get; set; }
         public string Description { get; set; }
         public string Relationship { get; set; }
-        public virtual ICollection<Dream> Dreams { get; set; }
+        public virtual ICollection<CharacterDream> CharacterDreams { get; set; }
     }
 }

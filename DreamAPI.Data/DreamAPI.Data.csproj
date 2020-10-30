@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="CharacterDream.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="Dream.cs" />
     <Compile Include="Emotion.cs" />
@@ -171,6 +172,22 @@
     <Compile Include="Migrations\202010301502373_one.Designer.cs">
       <DependentUpon>202010301502373_one.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010301548523_table.cs" />
+    <Compile Include="Migrations\202010301548523_table.Designer.cs">
+      <DependentUpon>202010301548523_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301611189_Ef-Core.cs" />
+    <Compile Include="Migrations\202010301611189_Ef-Core.Designer.cs">
+      <DependentUpon>202010301611189_Ef-Core.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301636446_modelbuilder.cs" />
+    <Compile Include="Migrations\202010301636446_modelbuilder.Designer.cs">
+      <DependentUpon>202010301636446_modelbuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301641120_internal.cs" />
+    <Compile Include="Migrations\202010301641120_internal.Designer.cs">
+      <DependentUpon>202010301641120_internal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -190,6 +207,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010301502373_one.resx">
       <DependentUpon>202010301502373_one.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301548523_table.resx">
+      <DependentUpon>202010301548523_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301611189_Ef-Core.resx">
+      <DependentUpon>202010301611189_Ef-Core.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301636446_modelbuilder.resx">
+      <DependentUpon>202010301636446_modelbuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301641120_internal.resx">
+      <DependentUpon>202010301641120_internal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

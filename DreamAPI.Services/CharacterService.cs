@@ -48,7 +48,6 @@ namespace DreamAPI.Services
                 entity.Name = model.Name;
                 entity.Description = model.Description;
                 entity.Relationship = model.Relationship;
-                entity.DreamId = model.DreamId;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -83,7 +82,7 @@ namespace DreamAPI.Services
                                     Name = e.Name,
                                     Description = e.Description,
                                     Relationship = e.Relationship,
-                                    Dreams = e.Dreams
+                                    CharacterDreams = e.CharacterDreams
                                 }
                            );
 
@@ -105,7 +104,7 @@ namespace DreamAPI.Services
                         Name = entity.Name,
                         Description = entity.Description,
                         Relationship = entity.Relationship,
-                        Dreams = entity.Dreams
+                        CharacterDreams = entity.CharacterDreams
                     };
             }
         }

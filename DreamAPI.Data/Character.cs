@@ -20,7 +20,6 @@ namespace DreamAPI.Data
         [Required]
         public string Relationship { get; set; }
 
-        public int? DreamId { get; set; }
-        public ICollection<Dream> Dreams { get; set; } = new HashSet<Dream>();
+        public ICollection<CharacterDream> CharacterDreams { get; set; } = new HashSet<CharacterDream>();
     }
 }

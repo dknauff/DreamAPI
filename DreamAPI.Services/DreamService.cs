@@ -59,7 +59,7 @@ namespace DreamAPI.Services
                                     Rating = e.Rating,
                                     Comments = e.Comments,
                                     EmotionId = e.EmotionId,
-                                    Characters = e.Characters
+                                    CharacterDreams = e.CharacterDreams
                                 }
                          );
 
@@ -86,7 +86,7 @@ namespace DreamAPI.Services
                         Rating = entity.Rating,
                         Comments = entity.Comments,
                         EmotionId = entity.EmotionId,
-                        Characters = entity.Characters
+                        CharacterDreams = entity.CharacterDreams
                     };
             }
         }
@@ -106,7 +106,6 @@ namespace DreamAPI.Services
                 entity.Takeaway = model.Takeaway;
                 entity.Rating = model.Rating;
                 entity.EmotionId = model.EmotionId;
-                entity.CharacterId = model.CharacterId;
 
                 return ctx.SaveChanges() == 1;
             }

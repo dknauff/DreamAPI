@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterDreamService.cs" />
     <Compile Include="CommentService.cs" />
     <Compile Include="CharacterService.cs" />
     <Compile Include="DreamService.cs" />
