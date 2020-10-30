@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -37,6 +38,7 @@ namespace DreamAPI.Data
         public DbSet<Comment> Comments{ get; set; }
         public DbSet<Character> Characters { get; set; }
         public DbSet<Emotion> Emotions { get; set; }
+        public DbSet<CharacterDream> CharacterDreams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -59,15 +61,17 @@ namespace DreamAPI.Data
                 .WithMany(e => e.Dreams)
                 .HasForeignKey<int?>(d => d.EmotionId);
 
-            //modelBuilder.Entity<Dream>()
-            //    .HasMany<Emotion>(d => d.Emotions)
-            //    .WithMany(e => e.Dreams)
-            //    .Map(cs =>
-            //    {
-            //        cs.MapLeftKey("DreamRefId");
-            //        cs.MapRightKey("EmotionRefId");
-            //        cs.ToTable("DreamEmotion");
-            //    });
+            modelBuilder.Entity<CharacterDream>().HasKey(cd => new { cd.CharacterId, cd.DreamId });
+
+            modelBuilder.Entity<CharacterDream>()
+                .HasRequired<Character>(cd => cd.Character)
+                .WithMany(c => c.CharacterDreams)
+                .HasForeignKey(cd => cd.CharacterId);
+
+            modelBuilder.Entity<CharacterDream>()
+                .HasRequired<Dream>(cd => cd.Dream)
+                .WithMany(d => d.CharacterDreams)
+                .HasForeignKey(cd => cd.DreamId);
         }
     }
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>

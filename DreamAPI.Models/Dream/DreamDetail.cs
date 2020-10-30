@@ -20,5 +20,7 @@ namespace DreamAPI.Models.Dream1
         public ICollection<Comment> Comments { get; set; }
 
         public int? EmotionId { get; set; }
+
+        public virtual ICollection<CharacterDream> CharacterDreams { get; set; }
     }
 }

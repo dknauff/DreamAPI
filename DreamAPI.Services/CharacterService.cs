@@ -1,6 +1,6 @@
 ﻿using DreamAPI.Data;
 using DreamAPI.Models;
-using DreamAPI.Models.Character;
+using DreamAPI.Models.Character1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
@@ -81,7 +81,8 @@ namespace DreamAPI.Services
                                     CharacterId = e.CharacterId,
                                     Name = e.Name,
                                     Description = e.Description,
-                                    Relationship = e.Relationship
+                                    Relationship = e.Relationship,
+                                    CharacterDreams = e.CharacterDreams
                                 }
                            );
 
@@ -102,7 +103,8 @@ namespace DreamAPI.Services
                         CharacterId = entity.CharacterId,
                         Name = entity.Name,
                         Description = entity.Description,
-                        Relationship = entity.Relationship
+                        Relationship = entity.Relationship,
+                        CharacterDreams = entity.CharacterDreams
                     };
             }
         }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DreamAPI.Models.Character
+namespace DreamAPI.Models.Character1
 {
     public class CharacterCreate
     {

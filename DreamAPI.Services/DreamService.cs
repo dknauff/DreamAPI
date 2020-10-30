@@ -58,7 +58,8 @@ namespace DreamAPI.Services
                                     Takeaway = e.Takeaway,
                                     Rating = e.Rating,
                                     Comments = e.Comments,
-                                    EmotionId = e.EmotionId
+                                    EmotionId = e.EmotionId,
+                                    CharacterDreams = e.CharacterDreams
                                 }
                          );
 
@@ -84,7 +85,8 @@ namespace DreamAPI.Services
                         Takeaway = entity.Takeaway,
                         Rating = entity.Rating,
                         Comments = entity.Comments,
-                        EmotionId = entity.EmotionId
+                        EmotionId = entity.EmotionId,
+                        CharacterDreams = entity.CharacterDreams
                     };
             }
         }

@@ -151,13 +151,42 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="CharacterDream.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="Dream.cs" />
     <Compile Include="Emotion.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202010291902182_nullable.cs" />
-    <Compile Include="Migrations\202010291902182_nullable.Designer.cs">
-      <DependentUpon>202010291902182_nullable.cs</DependentUpon>
+    <Compile Include="Migrations\202010301357584_fluentAPI.cs" />
+    <Compile Include="Migrations\202010301357584_fluentAPI.Designer.cs">
+      <DependentUpon>202010301357584_fluentAPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301429181_notvirtual.cs" />
+    <Compile Include="Migrations\202010301429181_notvirtual.Designer.cs">
+      <DependentUpon>202010301429181_notvirtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301457505_ids.cs" />
+    <Compile Include="Migrations\202010301457505_ids.Designer.cs">
+      <DependentUpon>202010301457505_ids.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301502373_one.cs" />
+    <Compile Include="Migrations\202010301502373_one.Designer.cs">
+      <DependentUpon>202010301502373_one.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301548523_table.cs" />
+    <Compile Include="Migrations\202010301548523_table.Designer.cs">
+      <DependentUpon>202010301548523_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301611189_Ef-Core.cs" />
+    <Compile Include="Migrations\202010301611189_Ef-Core.Designer.cs">
+      <DependentUpon>202010301611189_Ef-Core.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301636446_modelbuilder.cs" />
+    <Compile Include="Migrations\202010301636446_modelbuilder.Designer.cs">
+      <DependentUpon>202010301636446_modelbuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301641120_internal.cs" />
+    <Compile Include="Migrations\202010301641120_internal.Designer.cs">
+      <DependentUpon>202010301641120_internal.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,8 +196,29 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202010291902182_nullable.resx">
-      <DependentUpon>202010291902182_nullable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010301357584_fluentAPI.resx">
+      <DependentUpon>202010301357584_fluentAPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301429181_notvirtual.resx">
+      <DependentUpon>202010301429181_notvirtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301457505_ids.resx">
+      <DependentUpon>202010301457505_ids.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301502373_one.resx">
+      <DependentUpon>202010301502373_one.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301548523_table.resx">
+      <DependentUpon>202010301548523_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301611189_Ef-Core.resx">
+      <DependentUpon>202010301611189_Ef-Core.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301636446_modelbuilder.resx">
+      <DependentUpon>202010301636446_modelbuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301641120_internal.resx">
+      <DependentUpon>202010301641120_internal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

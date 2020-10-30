@@ -19,5 +19,7 @@ namespace DreamAPI.Data
         public string Description { get; set; }
         [Required]
         public string Relationship { get; set; }
+
+        public ICollection<CharacterDream> CharacterDreams { get; set; } = new HashSet<CharacterDream>();
     }
 }
