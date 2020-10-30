@@ -18,5 +18,7 @@ namespace DreamAPI.Models.Dream1
         public int Rating { get; set; }
 
         public int? EmotionId { get; set; }
+
+        public int? CharacterId { get; set; }
     }
 }

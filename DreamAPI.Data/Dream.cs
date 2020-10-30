@@ -25,5 +25,8 @@ namespace DreamAPI.Data
 
         public int? EmotionId { get; set; }
         internal Emotion Emotion { get; set; }
+
+        public int? CharacterId { get; set; }
+        public ICollection<Character> Characters { get; set; } = new HashSet<Character>();
     }
 }

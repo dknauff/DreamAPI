@@ -1,5 +1,5 @@
 ﻿using DreamAPI.Models;
-using DreamAPI.Models.Character;
+using DreamAPI.Models.Character1;
 using DreamAPI.Services;
 using Microsoft.AspNet.Identity;
 using System;

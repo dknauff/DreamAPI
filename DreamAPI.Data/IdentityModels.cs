@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -59,15 +60,18 @@ namespace DreamAPI.Data
                 .WithMany(e => e.Dreams)
                 .HasForeignKey<int?>(d => d.EmotionId);
 
-            //modelBuilder.Entity<Dream>()
-            //    .HasMany<Emotion>(d => d.Emotions)
-            //    .WithMany(e => e.Dreams)
-            //    .Map(cs =>
-            //    {
-            //        cs.MapLeftKey("DreamRefId");
-            //        cs.MapRightKey("EmotionRefId");
-            //        cs.ToTable("DreamEmotion");
-            //    });
+            modelBuilder.Entity<Character>()
+                .HasMany<Dream>(c => c.Dreams)
+                .WithMany(d => d.Characters)
+                .Map(dc =>
+                {
+                    dc.MapLeftKey("CharacterRefId");
+                    dc.MapRightKey("DreamRefId");
+                    dc.ToTable("ChracterDream");
+                });
+
+            //modelBuilder.Configurations.Add(new DreamMap());
+            //modelBuilder.Configurations.Add(new CharacterMap());
         }
     }
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
@@ -84,4 +88,30 @@ namespace DreamAPI.Data
             HasKey(iur => iur.UserId);
         }
     }
+
+    //public class DreamMap : EntityTypeConfiguration<Dream>
+    //{
+    //    public DreamMap()
+    //    {
+    //        this.ToTable("Dream");
+    //        this.HasKey(d => d.DreamId);
+    //        this.Property(d => d.DreamId)
+    //            .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+    //        this.Property(d => d.Title)
+    //            .IsRequired();
+    //    }
+    //}
+
+    //public class CharacterMap : EntityTypeConfiguration<Character>
+    //{
+    //    public CharacterMap()
+    //    {
+    //        this.ToTable("Character");
+    //        this.HasKey(c => c.CharacterId);
+    //        this.Property(c => c.CharacterId)
+    //            .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+    //        this.Property(c => c.Name)
+    //            .IsRequired();
+    //    }
+    //}
 }

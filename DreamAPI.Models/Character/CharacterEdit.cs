@@ -12,5 +12,7 @@ namespace DreamAPI.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Relationship { get; set; }
+
+        public int? DreamId { get; set; }
     }
 }
