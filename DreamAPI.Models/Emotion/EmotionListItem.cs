@@ -12,6 +12,6 @@ namespace DreamAPI.Models.Emotion1
         public int EmotionId { get; set; }
         public string EmotionType { get; set; }
 
-        public ICollection<Dream> Dreams { get; set; }
+        public virtual ICollection<EmotionDream> EmotionDreams { get; set; }
     }
 }
