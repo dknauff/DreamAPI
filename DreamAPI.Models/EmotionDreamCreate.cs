@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DreamAPI.Models
 {
-    public class CharacterDreamCreate
+    public class EmotionDreamCreate
     {
-        public int CharacterId { get; set; }
+        public int EmotionId { get; set; }
         public int DreamId { get; set; }
     }
 }

@@ -155,6 +155,7 @@
     <Compile Include="Comment.cs" />
     <Compile Include="Dream.cs" />
     <Compile Include="Emotion.cs" />
+    <Compile Include="EmotionDream.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202010301357584_fluentAPI.cs" />
     <Compile Include="Migrations\202010301357584_fluentAPI.Designer.cs">
@@ -188,6 +189,10 @@
     <Compile Include="Migrations\202010301641120_internal.Designer.cs">
       <DependentUpon>202010301641120_internal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011021926057_EmotionDream.cs" />
+    <Compile Include="Migrations\202011021926057_EmotionDream.Designer.cs">
+      <DependentUpon>202011021926057_EmotionDream.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -219,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010301641120_internal.resx">
       <DependentUpon>202010301641120_internal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011021926057_EmotionDream.resx">
+      <DependentUpon>202011021926057_EmotionDream.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

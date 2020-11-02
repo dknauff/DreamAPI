@@ -77,7 +77,7 @@ namespace DreamAPI.Services
                                 {
                                     EmotionId = e.EmotionId,
                                     EmotionType = e.EmotionType,
-                                    Dreams = e.Dreams
+                                    EmotionDreams = e.EmotionDreams
                                 }
                         );
 
@@ -98,7 +98,7 @@ namespace DreamAPI.Services
                     {
                         EmotionId = entity.EmotionId,
                         EmotionType = entity.EmotionType,
-                        Dreams = entity.Dreams
+                        EmotionDreams = entity.EmotionDreams
                     };
             }
         }
