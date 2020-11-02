@@ -78,6 +78,7 @@
     <Compile Include="CommentService.cs" />
     <Compile Include="CharacterService.cs" />
     <Compile Include="DreamService.cs" />
+    <Compile Include="EmotionDreamService.cs" />
     <Compile Include="EmotionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

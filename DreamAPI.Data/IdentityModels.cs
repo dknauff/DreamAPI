@@ -39,6 +39,7 @@ namespace DreamAPI.Data
         public DbSet<Character> Characters { get; set; }
         public DbSet<Emotion> Emotions { get; set; }
         public DbSet<CharacterDream> CharacterDreams { get; set; }
+        public DbSet<EmotionDream> EmotionDreams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -52,26 +53,34 @@ namespace DreamAPI.Data
                 .Add(new IdentityUserRoleConfiguration());
 
             modelBuilder.Entity<Comment>()
-                .HasRequired<Dream>(c => c.Dream)
+                .HasRequired(c => c.Dream)
                 .WithMany(d => d.Comments)
                 .HasForeignKey<int>(c => c.DreamId);
-
-            modelBuilder.Entity<Dream>()
-                .HasRequired<Emotion>(d => d.Emotion)
-                .WithMany(e => e.Dreams)
-                .HasForeignKey<int?>(d => d.EmotionId);
 
             modelBuilder.Entity<CharacterDream>().HasKey(cd => new { cd.CharacterId, cd.DreamId });
 
             modelBuilder.Entity<CharacterDream>()
-                .HasRequired<Character>(cd => cd.Character)
+                .HasRequired(cd => cd.Character)
                 .WithMany(c => c.CharacterDreams)
                 .HasForeignKey(cd => cd.CharacterId);
 
             modelBuilder.Entity<CharacterDream>()
-                .HasRequired<Dream>(cd => cd.Dream)
+                .HasRequired(cd => cd.Dream)
                 .WithMany(d => d.CharacterDreams)
                 .HasForeignKey(cd => cd.DreamId);
+
+
+            modelBuilder.Entity<EmotionDream>().HasKey(ed => new { ed.EmotionId, ed.DreamId });
+
+            modelBuilder.Entity<EmotionDream>()
+                .HasRequired(ed => ed.Emotion)
+                .WithMany(e => e.EmotionDreams)
+                .HasForeignKey(ed => ed.EmotionId);
+
+            modelBuilder.Entity<EmotionDream>()
+                .HasRequired(ed => ed.Dream)
+                .WithMany(d => d.EmotionDreams)
+                .HasForeignKey(ed => ed.DreamId);
         }
     }
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>

@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DreamAPI.Data
 {
-    public class Emotion
+    public class EmotionDream
     {
-        [Key]
         public int EmotionId { get; set; }
-        public string EmotionType { get; set; }
+        internal Emotion Emotion { get; set; }
         public Guid OwnerId { get; set; }
-
-        public ICollection<EmotionDream> EmotionDreams { get; set; } = new HashSet<EmotionDream>();
+        public int DreamId { get; set; }
+        internal Dream Dream { get; set; }
     }
 }

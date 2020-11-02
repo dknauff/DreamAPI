@@ -16,6 +16,6 @@ namespace DreamAPI.Models
         [Range(1, 5, ErrorMessage = "Please choose a number between 1 and 5")]
         public int Rating { get; set; }
 
-        public int? EmotionId { get; set; }
+        
     }
 }
